@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteTodo, toggleTodo } from '../redux/actions';
 
 const List = () => {
-    const todos = useSelector((state) => state.todos);
+    const todos = useSelector((state) => state.todo);
     const dispatch = useDispatch();
 
     const handleDelete = (id) => {
@@ -18,7 +18,7 @@ const List = () => {
     }
   return (
     <ul>
-        {todos.map((todo) => (
+        {todos?.map((todo) => (
             <li key={todo.id}>
                 <input type='checkbox' checked={todo.completed} onChange={() => handleToggle(todo.id)} />
                 <span style={{textDecoration: todo.completed ? 'line-through' : 'none'}}>{todo.task}</span>
