@@ -1,11 +1,12 @@
 import Form from './components/Form'
 import List from './components/List'
+import './App.css'
 
 
 function App() {
   return (
-    <div>
-      <h1>ToDo App</h1>
+    <div className='container-app'>
+      <h1 className='title'>Welcome to your To-Do App</h1>
       <Form />
       <List />
     </div>
